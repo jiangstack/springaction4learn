@@ -40,3 +40,5 @@ spring会在初始化bean尽可能的满足其依赖. `@AutoWired`可以使用�
 上下文, `@ContextConfiguration(classes=CDPlayerConfig.class)` 指定配置文件
 
 
+### 2.2Java代码手动装配
+
