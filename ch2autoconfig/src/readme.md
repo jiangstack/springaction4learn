@@ -42,3 +42,21 @@ spring会在初始化bean尽可能的满足其依赖. `@AutoWired`可以使用�
 
 ### 2.2Java代码手动装配
 
+在一些情况如想把第三方的类库中组件装配到应用中,无法在其类上添加自动装配所需要的 `@Component`注解和 `@Autowired`
+注解,这时候就需要手动装配.
+移除 `CDPlayerConfig`的 `@ComponentScan`注解不再自动扫描
+
+#### 2.2.1 注册bean
+
+> 在`@Configuration` 注解的spring配置类中,@Bean注解的方法表示该方法会返回一个对象,spring会将
+> 此方法注册到spring上下文中.默认的ID为该方法名,可以在注解中自定义名字
+
+#### 2.2.2 注入bean
+
+装配cdPlayer使用 `@bean`注解,该方法调用了 `sgtPeppers()` 方法,因为@Bean注解的缘故,sgtPeppers()在
+调用时总会被拦截,保持单例
+
+2.3 xml配置
+略
+2.4 混合配置
+略
